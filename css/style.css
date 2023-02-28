@@ -213,6 +213,7 @@ main {
 }
 .main__content {
   width: 30%;
+  min-width: 331px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -292,7 +293,9 @@ main {
   padding: 35px 40px;
   color: #fff;
   background-color: #66C05D;
-  width: calc(50% - 15px);
+  width: 100%;
+  min-width: 450px;
+  max-width: 544px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -348,6 +351,46 @@ main {
   padding: 25px 0;
   font-size: 12px;
   line-height: 14px;
-  text-align: right;
+  text-align: center;
   color: #828282;
+}
+
+@media (max-width: 453px) {
+  .add__card {
+    flex-direction: column;
+    min-width: 50px;
+    text-align: center;
+  }
+  .add__content {
+    align-items: center;
+  }
+}
+@media (max-width: 685px) {
+  .top-line, .header__menu {
+    display: none;
+  }
+}
+@media (max-width: 859px) {
+  .goods__cards {
+    justify-content: center;
+  }
+}
+@media (max-width: 952px) {
+  .add__inner {
+    flex-direction: column;
+  }
+  .add__card {
+    max-width: 613px;
+  }
+  .second-line__inner {
+    flex-direction: column;
+  }
+  .second-line__address {
+    position: relative;
+    padding: 20px 0;
+  }
+  .second-line__contacts {
+    flex-direction: column;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
