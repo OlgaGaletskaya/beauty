@@ -1,0 +1,230 @@
+@import "_reset";
+
+$dark: #333333;
+$gray:#EFEFEF;
+$accent-color:#66C05D;
+
+@mixin flex($direction:row, $jc: space-between, $ai: center, $gap: 0 ) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gap;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: $gray;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1158px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.header{
+    font-size: 16px;
+    line-height: 19px;
+    &__menu{
+        padding: 30px 0;
+        @include flex($jc:center, $gap:40px);
+        background-color: #fff;
+    }
+}
+.top-line{
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 17px;
+    padding-bottom: 16px;
+    &__nav{
+        @include flex($jc:center, $gap:30px);
+    }
+}
+.second-line{
+    background-color: #fff;
+    border-bottom: 1px solid $gray;
+    padding: 20px 0;
+    color: #000000;
+    &__inner{
+        @include flex();
+    }
+    &__contacts{
+        @include flex($gap: 40px);
+    }
+    &__address{
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        left: 0;
+    }
+}
+.logo{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $accent-color;
+    @include flex($gap:20px);
+
+}
+.btn{
+    display: block;
+    padding: 12px 26px 13px 27px;
+    border: 2px solid $accent-color;
+    border-radius: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    &__white{
+        border: 2px solid #fff;
+        width: 170px;
+        text-align: center;
+    }
+    &__green{
+        padding: 9px 40px;
+        width: auto;
+        background-color: $accent-color;
+        color: #fff;
+    }
+}
+h1{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+}
+h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+h3{
+    font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+}
+main{
+    padding-bottom: 112px;
+}
+.main{
+    background-color: $accent-color;
+    color: #fff;
+    height: 604px;
+    overflow: hidden;
+    &__inner{
+        @include flex();
+
+    }
+    &__content{
+        width: 30%;
+        @include flex(column, center, flex-start, 50px);
+    }
+    &__img{
+        position: relative;
+        z-index: 2;
+        &:before, &:after{
+            content: "";
+            width: calc(100% + 94px);
+            height: calc(100% + 94px);
+            background-color: #fff;
+            top: -47px;
+            left: -47px;
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        &:after{
+            content: "";
+            width: calc(100% + 276px);
+            height: calc(100% + 276px);
+            top: -138px;
+            left: -138px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+    }
+}
+.goods{
+    padding: 80px 0;
+    &__inner{
+        & h2{
+            margin-bottom: 38px;
+        }
+    }
+    &__cards{
+        @include flex($gap:30px);
+        flex-wrap: wrap;
+    }
+    &__item{
+        padding: 25px 30px;
+        background-color: #fff;
+        @include flex(column, flex-start, center, 20px);
+        text-align: center;
+        width: 255px;
+    }
+    &__price{
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+        color: #000000;
+    }
+}
+.add{
+    padding: 20px 0;
+    &__inner{
+        @include flex($gap:30px);
+    }
+    &__card{
+        padding: 35px 40px;
+        color: #fff;
+        background-color: $accent-color;
+        width: calc(50% - 15px);
+        @include flex();
+    }
+    &__content{
+        @include flex(column, flex-start, flex-start, 25px);
+        
+        & p{
+            width: 80%;
+        }
+        & .btn{
+            padding: 7px 0;
+            width: 170px;
+
+        }
+    }
+    & input{
+        border-radius: 30px;
+        padding: 9px 25px;
+        width: 225px;
+    }
+}
+.social{
+    @include flex($gap:20px);
+    &__link{
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid $accent-color;
+        @include flex(row, center, center, 0);
+    }
+
+}
+.footer{
+    &__inner{
+        @include flex();
+        padding: 25px 0;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        color: #828282;
+    }
+}
